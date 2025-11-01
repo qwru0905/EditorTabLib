@@ -78,8 +78,10 @@ namespace EditorTabLib
                     foreach (var dictionary in tab.properties)
                     {
                         ADOFAI.PropertyInfo propertyInfo = new ADOFAI.PropertyInfo(dictionary, levelEventInfo);
-                        if (dictionary.TryGetValue("type", out object obj) && obj is string str && str == "Export" && dictionary.TryGetValue("default", out obj) && obj is UnityAction action)
+                        if (dictionary.TryGetValue("type", out object obj) && obj is string str && str == "Export" &&
+                            dictionary.TryGetValue("default", out obj) && obj is UnityAction action)
                             propertyInfo.value_default = action;
+
                         propertyInfo.order = 0;
                         levelEventInfo.propertiesInfo.Add(propertyInfo.name, propertyInfo);
                     }

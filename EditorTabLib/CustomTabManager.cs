@@ -260,6 +260,15 @@ namespace EditorTabLib
             return Patches.InspectorPanelShowPanelPatch.saves.TryGetValue(type, out LevelEvent value) ? value : null;
         }
 
+        public static int GetAbleType()
+        {
+            int max = 0;
+            foreach (LevelEventType let in Enum.GetValues(typeof(LevelEventType)))
+                if ((int)let > max)
+                    max = (int)let;
+            return max + 1;
+        }
+
         internal class CustomTab
         {
             internal Sprite icon;
