@@ -1,0 +1,8 @@
+{
+  "Id": "EditorTabLib",
+  "DisplayName": "EditorTabLib",
+  "Author": "tjwogud",
+  "Version": "2.3.7",
+  "AssemblyName": "EditorTabLib.dll",
+  "EntryMethod": "EditorTabLib.Main.Setup"
+}

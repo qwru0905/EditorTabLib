@@ -1,6 +1,36 @@
 # EditorTabLib
 먼저 모드를 유니티모드매니저로 적용한 후, steamapps/common/A Dance of Fire and Ice/Mods/EditorTabLib 에 위치한 EditorTabLib.dll을 종속성으로 추가하여 사용할 수 있습니다.
 
+## 빌드 방법 / How to build
+
+### 한국어
+1. `EditorTabLib/EditorTabLib.csproj.user.example` 파일을 같은 폴더에 `EditorTabLib.csproj.user` 로 복사합니다.
+2. 복사한 파일의 `AdofaiManagedDir` 값을 본인의 ADOFAI 설치 경로의 `Managed` 폴더로 수정합니다.
+   ```xml
+   <AdofaiManagedDir>D:\Path\To\A Dance of Fire and Ice\A Dance of Fire and Ice_Data\Managed</AdofaiManagedDir>
+   ```
+3. 다음 명령으로 빌드합니다.
+   ```
+   dotnet build EditorTabLib/EditorTabLib.csproj
+   ```
+4. 빌드가 끝나면 `EditorTabLib/bin/Debug/net4.8/EditorTabLib.dll` 파일이 생성됩니다. 이 파일을 게임의 `Mods/EditorTabLib` 폴더에 복사하세요.
+
+`EditorTabLib.csproj.user` 파일은 git에서 추적되지 않으므로(`.gitignore`의 `*.user` 규칙), 각자의 설치 경로를 자유롭게 설정해도 됩니다.
+
+### English
+1. Copy `EditorTabLib/EditorTabLib.csproj.user.example` to `EditorTabLib.csproj.user` in the same folder.
+2. Edit `AdofaiManagedDir` in the copied file to point to the `Managed` folder of your ADOFAI installation.
+   ```xml
+   <AdofaiManagedDir>D:\Path\To\A Dance of Fire and Ice\A Dance of Fire and Ice_Data\Managed</AdofaiManagedDir>
+   ```
+3. Build with:
+   ```
+   dotnet build EditorTabLib/EditorTabLib.csproj
+   ```
+4. After the build finishes, `EditorTabLib/bin/Debug/net4.8/EditorTabLib.dll` will be created. Copy it into the game's `Mods/EditorTabLib` folder.
+
+`EditorTabLib.csproj.user` is git-ignored (via the `*.user` rule in `.gitignore`), so each developer can use their own install path.
+
 ## 사용법 / How to use
 ```cs
 // index는 생략 가능

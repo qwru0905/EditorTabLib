@@ -451,7 +451,7 @@ namespace EditorTabLib
                 {
                     if (__instance.GetType().Equals(ADOFAITypes.controls["Toggle"]) && __instance.Get<bool>("settingText"))
                         return;
-                    ___propertiesPanel.inspectorPanel.selectedEvent.data.TryGetValue(___propertyInfo.name, out __state);
+                    ___propertiesPanel.inspectorPanel.selectedEvent.GetData().TryGetValue(___propertyInfo.name, out __state);
                 }
 
                 internal static void Postfix(object __instance, PropertiesPanel ___propertiesPanel, ADOFAI.PropertyInfo ___propertyInfo, object __state)
